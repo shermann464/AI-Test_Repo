@@ -1,0 +1,172 @@
+/* Nature Illustration Theme */
+:root {
+    --parchment: #f4e4bc;
+    --ink: #2c1810;
+    --accent: #8b4513;
+    --leaf: #496b2e;
+    --border: #8b4513;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Crimson Text', Georgia, serif;
+    line-height: 1.6;
+    background-color: var(--parchment);
+    color: var(--ink);
+    background-image: 
+        linear-gradient(rgba(244, 228, 188, 0.6) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(244, 228, 188, 0.6) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 2rem;
+    position: relative;
+}
+
+/* Decorative corners */
+.container::before,
+.container::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border: 3px solid var(--border);
+    pointer-events: none;
+}
+
+.container::before {
+    top: 0;
+    left: 0;
+    border-right: none;
+    border-bottom: none;
+}
+
+.container::after {
+    bottom: 0;
+    right: 0;
+    border-left: none;
+    border-top: none;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    border-bottom: 2px solid var(--border);
+    position: relative;
+}
+
+h1 {
+    color: var(--accent);
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-family: 'Playfair Display', serif;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.subtitle {
+    font-style: italic;
+    color: var(--leaf);
+    font-size: 1.2rem;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    position: relative;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    z-index: -1;
+    opacity: 0.5;
+}
+
+h2 {
+    color: var(--leaf);
+    margin-bottom: 1.5rem;
+    font-family: 'Playfair Display', serif;
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 0.5rem;
+}
+
+ul {
+    list-style-position: inside;
+    margin-left: 1rem;
+    list-style-type: none;
+}
+
+li {
+    margin-bottom: 0.8rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+li::before {
+    content: '•';
+    color: var(--accent);
+    position: absolute;
+    left: 0;
+    font-size: 1.2em;
+}
+
+footer {
+    text-align: center;
+    margin-top: 3rem;
+    padding: 1rem;
+    color: var(--accent);
+    font-style: italic;
+    border-top: 2px solid var(--border);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+        margin: 1rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .card {
+        padding: 1.5rem;
+    }
+
+    .container::before,
+    .container::after {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* Add decorative flourishes to section headings */
+h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 2px;
+    background-color: var(--accent);
+    margin-top: 0.5rem;
+}
